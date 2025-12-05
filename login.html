@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="navegação">
+          <a href="index.html">
+            <img src="./img/logo grupo2.png">
+          </a>
+
+          <nav class="nav-desktop">
+            <a href="index.html">Início</a>
+            <a href=""></a>
+            <a href="">Carregadores</a>
+            <a href="manutenção.html">Serviços</a>
+          </nav>
+
+          <div class="pesquisa">
+            <input type="text" placeholder="Pesquisa">
+            <button>
+              <img src="https://cdn1.iconfinder.com/data/icons/unicons-line-vol-5/24/search-alt-256.png"
+                alt="Pesquisar" width="16" height="16">
+            </button>
+          </div>
+
+            <div class="usuario">
+              <button onclick="location.href='./login.html'">
+                <img src="https://cdn1.iconfinder.com/data/icons/materia-arrows-symbols-vol-8/24/018_322_door_enter_signin_login-512.png" width="16" height="16" alt="Entrar">
+                <span></span>
+              </button>
+
+              <button onclick="location.href='./cadastro.html'">
+                <img src="https://cdn3.iconfinder.com/data/icons/essential-rounded/66/Rounded-38-512.png" width="16" height="16" alt="Cadastro">
+
+              </button>
+            </div>
+
+          <input type="checkbox" id="menu-escondido" class="menu-escondido">
+          <label for="menu-escondido" class="hamburguer">
+            <span class="linha linha1"></span>
+            <span class="linha linha2"></span>
+            <span class="linha linha3"></span>
+          </label>
+
+          <ul class="menu">
+            <li><a href="mailto:higor.vmorais@senacsp.edu.br">E-mail</a></li>
+            <li><a href="tel:+5511940028922">Telefone</a></li>
+            <li><a href="https://wa.me/+5511940028922">WhatsApp</a></li>
+            <li><a href="./cadastro.html">Cadastro</a></li>
+          </ul>
+        </div>
+      </header>
+  
+    <main class="">
+        <div class="form-container">
+            <div class="loader">
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+          <p class="blinker">
+              Login
+          </p>
+            </div>
+            <form class="form">
+                <div class="input-group">
+                    <label for="username">Nome</label>
+                    <input type="text" name="username" id="username" placeholder="">
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="password" placeholder="">
+                    <div class="forgot">
+                        <a rel="noopener noreferrer" href="#">Esqueceu sua senha ?</a>
+                    </div>
+                </div>
+                <button class="sign">Entrar </button>
+            </form>
+            <div class="social-message">
+                <div class="line"></div>
+                <p class="message">Entrar com redes sociais</p>
+                <div class="line"></div>
+            </div>
+            
+            <p class="signup">Não tem uma conta?
+                <a rel="noopener noreferrer" href="#" class="">Cadastre-se</a>
+            </p>
+        </div>
+      <footer>
+
+
+        <div>
+          <h2>Nossas redes sociais</h2>
+          <a href="https://www.instagram.com/">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="32">
+          </a>
+          <a href="https://www.facebook.com/">
+            <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" width="32"> </a>
+
+
+
+        </div>
+        <h2>
+          <a class="poli" href="politicas.html">politcas de privacidade</a>
+        </h2>
+
+      </footer>
+        <script>
+            document.querySelector('form').addEventListener('submit', function (event) { event.preventDefault(); alert("Formulario foi finalizado"); })
+        </script>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat-Bot</title>
+  <link rel="stylesheet" href="./css/stylechat.css">
+</head>
+
+<body>
+  <header>
+    <div class="navegação">
+      <a href="index.html">
+        <img src="./img/logo grupo2.png">
+      </a>
+
+      <nav class="nav-desktop">
+        <a href="index.html">Início</a>
+        <a href=""></a>
+        <a href="">Carregadores</a>
+        <a href="manutenção.html">Serviços</a>
+      </nav>
+
+      <div class="pesquisa">
+        <input class="campo-pesquisa" type="text" placeholder="Pesquisar...">
+        <button>
+          <img src="https://cdn1.iconfinder.com/data/icons/unicons-line-vol-5/24/search-alt-256.png" alt="Pesquisar" width="16" height="16">
+        </button>
+      </div>
+
+      <div class="usuario">
+        <button onclick="location.href='./login.html'">
+          <img src="https://cdn1.iconfinder.com/data/icons/materia-arrows-symbols-vol-8/24/018_322_door_enter_signin_login-512.png" width="16" height="16" alt="Entrar">
+          <span></span>
+        </button>
+
+        <button onclick="location.href='./cadastro.html'">
+          <img src="https://cdn3.iconfinder.com/data/icons/essential-rounded/66/Rounded-38-512.png" width="16" height="16" alt="Cadastro">
+          
+        </button>
+      </div>
+
+      <input type="checkbox" id="menu-escondido" class="menu-escondido">
+      <label for="menu-escondido" class="hamburguer">
+        <span class="linha linha1"></span>
+        <span class="linha linha2"></span>
+        <span class="linha linha3"></span>
+      </label>
+
+      <ul class="menu">
+        <li><a href="mailto:higor.vmorais@senacsp.edu.br">E-mail</a></li>
+        <li><a href="tel:+5511940028922">Telefone</a></li>
+        <li><a href="https://wa.me/+5511940028922">WhatsApp</a></li>
+        <li><a href="./cadastro.html">Cadastro</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">
+            <h3>Meu Chatbot</h3>
+        </div>
+        <div class="chat-window" id="chat-window">
+            <!-- Mensagens serão adicionadas aqui via JS -->
+        </div>
+        <form class="chat-form" id="chat-form">
+            <input type="text" id="user-input" placeholder="Digite sua mensagem...">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+          
+  </main>
+
+  <footer>
+    
+  </footer>
+
+  </body>
+
+  <script>
+
+    /*const chatForm = document.getElementById("chat-form");
+    const chatWindow = document.getElementById("chat-window");
+    const userInput = document.getElementById("user-input");
+
+    const responses = {
+      "oi": "Olá! Como posso ajudar você hoje?",
+      "qual é o seu nome?": "Sou um assistente virtual.",
+      "Quem são vocês?" : "Somos a Top Carga, uma empresa especializada em carregadores e acessórios para celulares.",
+      "tchau": "Até logo! Tenha um ótimo dia!"
+    };
+
+    chatForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const userMenssage = userInput.value.trim();
+      if (userMenssage) {
+        addMenssage(userMenssage, "user-message");
+        respondToUser(userMenssage);
+        userInput.value = "";
+      }
+    });
+
+    function addMenssage(text, className) {
+      const messageDiv = document.createElement("div");
+      messageDiv.textContent = text;
+      messageDiv.classList.add("message", className);
+      chatWindow.appendChild(messageDiv);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    function respondToUser(userMenssage) {
+      const lowerCaseMessage = userMenssage.toLowerCase();
+      let botResponse = "Desculpe, não entendi. Pode reformular?";
+
+      for (const keyword in responses) {
+        if (lowerCaseMessage.includes(keyword)) {
+          botResponse = responses[keyword];
+          break;
+        }
+      }
+
+      setTimeout(() => {
+        addMenssage(botResponse, "bot-message");
+      }, 500);
+    }
+      
+    }
+    );*/
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const chatForm = document.getElementById("chat-form");
+        const chatWindow = document.getElementById("chat-window");
+        const userInput = document.getElementById("user-input");
+
+        // Respostas pré-definidas (o "cérebro" do bot)
+        const responses = {
+            "olá": "Olá! Como posso ajudar hoje?",
+            "oi": "Oi! Tudo bem?",
+            "serviços": "Nós somos a Top Carga, vendemos carregadores de todos os tipos e fazermos manutenção de celulares.",
+            "contato": "Você pode nos contatar pelo email contato@exemplo.com.",
+            "obrigado": "De nada! Estou aqui se precisar.",
+            "tchau": "Até mais! Volte sempre.",
+        };
+
+        chatForm.addEventListener("submit", (e) => {
+            e.preventDefault(); // Impede o recarregamento da página
+            const userMessage = userInput.value.trim();
+            if (userMessage) {
+                addMessage(userMessage, "user-message");
+                respondToUser(userMessage);
+                userInput.value = ""; // Limpa o input
+            }
+        });
+
+        function addMessage(text, className) {
+            const messageDiv = document.createElement("div");
+            messageDiv.textContent = text;
+            messageDiv.classList.add("message", className);
+            chatWindow.appendChild(messageDiv);
+            chatWindow.scrollTop = chatWindow.scrollHeight; // Rola para a última mensagem
+        }
+
+        function respondToUser(userMessage) {
+            // Lógica simples de resposta baseada em palavras-chave
+            const lowerCaseMessage = userMessage.toLowerCase();
+            let botResponse = "Desculpe, não entendi. Tente perguntar sobre 'serviços' ou 'contato'.";
+
+            for (const keyword in responses) {
+                if (lowerCaseMessage.includes(keyword)) {
+                    botResponse = responses[keyword];
+                    break;
+                }
+            }
+
+            // Simula um pequeno atraso para parecer mais natural
+            setTimeout(() => {
+                addMessage(botResponse, "bot-message");
+            }, 500);
+        }
+    });
+    
+  </script>
+  
+
+</html>

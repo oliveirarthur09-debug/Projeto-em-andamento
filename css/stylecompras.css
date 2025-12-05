@@ -1,0 +1,483 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: linear-gradient(#000000, #1a1a00, #000000);
+  color: #ffea00;
+  text-align: center;
+}
+
+/* ====== NAVBAR ====== */
+.navegação {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: #0d0d00;
+  color: #ffea00;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px #ffea00;
+}
+
+.nav-desktop a {
+  color: #ffea00;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-desktop a:hover {
+  color: #fafafa;
+}
+
+/* ====== BARRA DE PESQUISA ====== */
+.pesquisa {
+  display: flex;
+  align-items: center;
+  background-color: #1a1a00;
+  border: 1px solid #ffea00;
+  border-radius: 16px;
+  padding: 2px;
+}
+
+.pesquisa input {
+  border: none;
+  outline: none;
+  padding: 4px;
+  width: 120px;
+  border-radius: 16px;
+  background-color: #000;
+  color: #ffea00;
+}
+
+.pesquisa button {
+  background-color: #ffea00;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: #000;
+  transition: background-color 0.3s;
+}
+
+.pesquisa button:hover {
+  background-color: #fff56d;
+}
+
+/* ====== USUÁRIO ====== */
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.usuario button {
+  background-color: #ffea00;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  color: #ffea00;
+  transition: all 0.3s;
+}
+
+.usuario button:hover {
+  background-color: #fff04d;
+  color: #000;
+}
+
+.usuario img {
+  width: 18px;
+  height: 18px;
+}
+
+/* ====== MENU RESPONSIVO ====== */
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.linha {
+  height: 4px;
+  background-color: #ffea00;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-escondido {
+  display: none;
+  padding: 16px;
+  color: #f0d76c;
+  text-decoration: none;
+}
+
+.menu {
+  display: none;
+  list-style: none;
+  background-color: #000;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  top: 60px;
+  z-index: 1000;
+  left: 0;
+  transition: max-height 0.4s ease-in-out;
+  width: 100%;
+  box-shadow: 0 0 10px #ffea00;
+}
+
+.menu li a {
+  display: block;
+  padding: 16px;
+  color: #ffea00;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background-color: #333000;
+}
+
+.menu-escondido:checked ~ .menu {
+  display: block;
+}
+
+.menu-escondido:checked~.menu {
+  max-height: 500px;
+  padding: 8px 0;
+}
+
+.menu-escondido:checked~.hamburguer .linha1 {
+  transform: rotate(50deg) translate(8px, 8px);
+}
+
+.menu-escondido:checked~.hamburguer .linha2 {
+  opacity: 0;
+}
+
+.menu-escondido:checked~.hamburguer .linha3 {
+  transform: rotate(-50deg) translate(8px, -7px);
+}
+
+
+.true{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.produto-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 900px;
+}
+
+.imagem-produto img {
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgb(174, 255, 0, 0.5);
+  margin-left: 100px;
+}
+
+.descricao-produto {
+  text-align: left;
+  max-width: 400px;
+  color: white;
+}
+
+.descricao-produto p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.botão {
+  background-color: #ffea00;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #000;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.botão:hover {
+  transition: 0.3s ease all;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #ffffff;
+  color: #000;
+  padding: 10px 16px;
+  cursor: pointer;
+  background-color: #c7c700;
+}
+
+.verificação{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px
+}
+
+.parcela{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.parcela select{
+  background-color: #000;
+  color: #ffea00;
+  border: 1px solid #ffea00;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 8px;
+  width: 200px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.parcela select:hover{
+  background-color: #ffea00;
+  color: #000
+}
+
+.parcela select option{
+  background-color: #000;
+  color: #ffea00;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cartao{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ffffff;
+  border: 2px solid #ffea00;
+  border-radius: 8px;
+  padding: 10px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.cartao h1{
+  color: #ffea00;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cartao input{
+  margin-left: 10px;
+  background-color: #000;
+  color: #ffea00;
+  border: 1px solid #ffea00;
+}
+
+.cartao label{
+  display: flex;
+  margin-left: 5px;
+  margin-top: 10px
+  
+}
+
+.cred-deb{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px
+}
+
+/*.cartao input[type="radio"]{
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffea00;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cartao input[type="radio"]:checked{
+  background-color: #ffea00;
+  border-color: #ffea00;
+}
+
+.cartao input[type="radio"]:hover{
+  background-color: #ffea00;
+}*/
+
+fieldset{
+  border: 2px solid #ffea00;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+legend{
+  font-size: 18px;
+  color: #ffffff;
+  padding: 0 10px;
+  text-align: center;
+}
+
+footer {
+  background-color: #000;
+  color: #ffea00;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ffea00;
+  box-shadow: 0 -2px 10px rgba(255, 234, 0, 0.4);
+  display: grid;
+  place-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 100px;
+}
+
+.poli{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.poli:hover{
+  color: #b3a400;
+}
+
+.whatsapp-button {
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #36652f;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+    animation: pulse 2s infinite;
+
+}
+
+.whatsapp-button:hover{
+
+    background-color: #00ff59;
+
+}
+
+@keyframes pulse{
+
+    0%, 100% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+
+}
+
+.whatsapp-button img {
+
+    width: 30px;
+    height: 30px;
+
+}
+
+
+@media (max-width: 992px) {
+  .nav-desktop{
+    display: none;
+  }
+
+  .parcela{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffea00
+  }
+
+  .parcela select{
+    width: 100%;
+  }
+
+  .parcela select option{
+    width: 100%;
+  }
+
+  .parcela select option:hover{
+    background-color: #ffea00;
+    color: #000;
+  }
+
+  .parcela select option:checked{
+    background-color: #ffea00;
+    color: #000
+  }
+
+  .parcela select option:focus{
+    background-color: #ffea00;
+  }
+
+  .parcela select option:active{
+    background-color: #ffea00
+  }
+
+  .parcela select option:visited{
+    background-color: #ffea00
+  }
+
+  .parcela select option:link{
+    background-color: #ffea00;
+  }
+
+  .parcela select option:target{
+    background-color: #ffea00
+  }
+
+   .hamburguer{
+      display: flex;
+   }
+
+  .usuario{
+    display: flex;
+    align-items: center;
+    gap: 6px
+  }
+}
